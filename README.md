@@ -27,3 +27,5 @@ Follow these steps to set up the project locally:
 ```bash
 git clone https://github.com/your-username/netflix-clone-firebase.git
 cd netflix-clone-firebase
+
+Here is the live website  : https://netflix-react-tailwind-tau.vercel.app/
