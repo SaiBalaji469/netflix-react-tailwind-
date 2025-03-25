@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../../context/AuthContext'
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const {user, signUp} = UserAuth() || {};
+  const {user, signUp} = UserAuth() || {};
+  const navigate = useNavigate()
   // console.log(UserAuth())
 
   const handdleSubmit = async (e) =>{
     e.preventDefault()
     try{
-        <UserAuth.Consumer>
-         {signUp => signUp(email, password)}
-        </UserAuth.Consumer>
+       await signUp(email, password)
+       navigate("/")
         
     }catch(err){
       console.log(err)
